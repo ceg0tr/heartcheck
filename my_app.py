@@ -33,7 +33,7 @@ class MainWin(QWidget):
         self.tw = TestWin()
 
 
-window1 = MainWin()
+mw = MainWin()
 
 
 
