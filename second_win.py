@@ -9,6 +9,15 @@ from PyQt5.QtWidgets import (
 from instr import *
 from final_win import *
  
+
+
+
+class Experiment():
+    def __init__(self,age,test1,test2,test3):
+        self.age = age
+        self.test1 = test1
+        self.test2 = test2
+        self.test3 = test3
  
 class TestWin(QWidget):
     def __init__(self):
