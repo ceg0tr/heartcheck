@@ -26,19 +26,12 @@ class TestWin(QWidget):
         self.set_appear()
         self.show()
  
-    def next_click(self):
-        self.tw = TestWin()
-        self.hide()
+    
  
  
-    def connects(self):
-        self.btn_next.clicked.connect(self.next_click)
+    
  
-    def set_appear(self):
-        self.setWindowTitle(txt_title)
-        self.resize(win_width, win_height)
-        self.move(win_x, win_y)
- 
+    
  
     def initUI(self):
         self.btn_next = QPushButton(txt_sendresults, self)
@@ -84,7 +77,7 @@ class TestWin(QWidget):
  
     def next_click(self):
         self.hide()
-        self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(), self.line_test2.text(), self.line_test3())
+        self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(), self.line_test2.text(), self.line_test3.text())
         self.fw = FinalWin(self.exp)
  
     def timer_test(self):
@@ -137,7 +130,7 @@ class TestWin(QWidget):
         else:
             self.text_timer.setStyleSheet("color: rgb(0, 0, 0)")
  
-        self.timer_text.setFont(QFont("Times", 36, QFont.Bold))
+        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
         if time.toString("hh:mm:ss") == "00:00:00":
             self.timer.stop()
  

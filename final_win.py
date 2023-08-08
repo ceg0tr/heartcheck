@@ -7,7 +7,8 @@ from PyQt5.QtWidgets import (
        QPushButton, QLabel, QListWidget, QLineEdit)
  
 from instr import *
- 
+
+
  
 class FinalWin(QWidget):
     def __init__(self, exp):
@@ -15,7 +16,6 @@ class FinalWin(QWidget):
         self.initUI()
         self.set_appear()
         self.show()
- 
         self.exp = exp
  
     def results(self):
@@ -78,3 +78,17 @@ class FinalWin(QWidget):
                 return txt_res4
             else:
                 return txt_res5
+ 
+    def initUI(self):
+        self.workh_text = QLabel(txt_workheart + self.results())
+        self.index_text = QLabel(txt_index + str(self.index))
+ 
+        self.layout_line = QVBoxLayout()
+        self.layout_line.addWidget(self.index_text, alignment = Qt.AlignCenter)
+        self.layout_line.addWidget(self.workh_text, alignment = Qt.AlignCenter)        
+        self.setLayout(self.layout_line)
+ 
+    def set_appear(self):
+        self.setWindowTitle(txt_finalwin)
+        self.resize(win_width, win_height)
+        self.move(win_x, win_y)
